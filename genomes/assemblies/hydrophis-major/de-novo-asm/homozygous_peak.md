@@ -49,10 +49,9 @@ p <- ggplot(filtered_data, aes(x = Depth, y = Count)) +
   coord_cartesian(xlim = c(5, 150)) + # Adjust 150 to your expected max depth
   theme_bw() +
   labs(
-    title = "K-mer Distribution",
-    subtitle = "Homozygous peak identification",
-    x = "K-mer Depth (Column 2)",
-    y = "K-mer Count (Column 4)"
+    title = "K-mer Spectrum",
+    x = "K-mer Depth",
+    y = "K-mer Count"
   )
 
 # Save the plot

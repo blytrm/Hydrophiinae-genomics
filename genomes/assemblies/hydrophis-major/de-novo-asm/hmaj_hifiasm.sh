@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=hifiasm_hydmaj
+#SBATCH --job-name=hifiasm_hydmaj_filtered
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=64
 #SBATCH --mem=240G
@@ -17,15 +17,12 @@ conda activate /hpcfs/users/a1864358/miniconda/envs/hifiasm
 
 cd $SLURM_SUBMIT_DIR
 
-HIFI="/hpcfs/users/a1864358/sanders_lab/asm/files/hmaj/hifiasm/hydmaj.fastq.gz"
+HIFI="/hpcfs/users/a1864358/sanders_lab/asm/files/hmaj/hifiasm/hifilt/hydmaj.filt.fastq.gz"
 HIC_R1="/hpcfs/users/a1864358/sanders_lab/asm/files/hmaj/hifiasm/350845_R1.fastq.gz"
 HIC_R2="/hpcfs/users/a1864358/sanders_lab/asm/files/hmaj/hifiasm/350845_R2.fastq.gz"
 OUTDIR="/hpcfs/users/a1864358/sanders_lab/asm/files/hmaj/hifiasm"
 mkdir -p $OUTDIR
 cd $OUTDIR
-
-ls -la hydmaj.fastq.gz 350845_R1.fastq.gz 350845_R2.fastq.gz
-file hydmaj.fastq.gz
 
 hifiasm \
     -o hmaj_26 \
@@ -36,4 +33,4 @@ hifiasm \
     -u 1 \
     --h1 350845_R1.fastq.gz \
     --h2 350845_R2.fastq.gz \
-    hydmaj.fastq.gz
+    ${HIFI}

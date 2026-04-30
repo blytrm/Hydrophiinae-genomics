@@ -1,36 +1,35 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=rna-pre-anno
-#SBATCH -p highmem
+#SBATCH -p icelake
+#SBATCH -A honours
 #SBATCH -N 1
-#SBATCH --cpus-per-task=48
-#SBATCH --time=3:00:00:00
-#SBATCH --mem=1000GB
+#SBATCH --cpus-per-task=24
+#SBATCH --time=08:00:00
+#SBATCH --mem=120GB
 #SBATCH -o %x_%j.out
 #SBATCH -e %x_%j.err
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=13billy.trim13@gmail.com
-
 
 # RNA-seq pre-processing for EviAnn genome annotation input
 
 set -euo pipefail
 module purge
 
-# export PATH="/hpcfs/users/a1864358/miniconda/envs/general"
-#source /hpcfs/users/a1864358/miniconda/miniconda3/etc/profile.d/conda.sh
-#conda activate /hpcfs/users/a1864358/miniconda/envs/general
+source /hpcfs/users/a1864358/miniconda/miniconda3/etc/profile.d/conda.sh
+conda activate /hpcfs/users/a1864358/miniconda/envs/rnaqc
 
 
-RNA_DIR=""
-OUT=""
+RNA_DIR="/scratchdata1/users/a1864358/sanders_lab/asm/files/annotation/pre-anno/rna_input_test"
+OUT="/scratchdata1/users/a1864358/sanders_lab/asm/files/annotation/pre-anno/rna-qc"
 CLEANED_DIR="${OUT}/cleaned"
 THREADS=${SLURM_CPUS_PER_TASK}
 OUT_LOGS="${OUT}/logs"
 
 # databases
-KRAKEN2_DB=""
-ADAPTER_REF=""
-RRNA_REF=""
+KRAKEN2_DB="/scratchdata1/users/a1864358/dbs/kraken2/k2_test_db"
+ADAPTER_REF="/hpcfs/users/a1864358/miniconda/envs/general/share/bbmap/resources/adapters.fa"
+RRNA_REF="/scratchdata1/users/a1864358/dbs/rrna_refs/rrna_combined.fa"
 
 # parameters
 MINLEN=50
@@ -55,7 +54,7 @@ find_pair() {
     local r1="$1"
     local r2="${r1/_R1./_R2.}"
     [[ "${r2}" == "${r1}" ]] && r2="${r1/_1./_2.}"
-    printf '%s\n' "${r1}" "${r2}"
+    printf '%s' "${r2}"
 }
 
 declare -a SAMPLES=()
@@ -101,7 +100,7 @@ main() {
         "${OUT_FINAL}" \
         "${OUT_MULTIQC}" 
     
-    for sample in "${samples[@]}"; do
+    for sample in "${SAMPLES[@]}"; do
         raw_r1="${SAMPLE_R1[${sample}]}"
         raw_r2="${SAMPLE_R2[${sample}]}"
         process "${sample}" "${raw_r1}" "${raw_r2}"
@@ -152,7 +151,7 @@ process() {
         minlength="${MINLEN}" \
         threads="${THREADS}" \
         stats="${OUT_BBDUK}/${sample}.bbduk.stats.txt" \
-        2>>"${OUT_LOGS}/${sample}.bbduk.log" 2>&1
+        >>"${OUT_LOGS}/${sample}.bbduk.log" 2>&1
 
     kraken2 \
         --db "${KRAKEN2_DB}" \

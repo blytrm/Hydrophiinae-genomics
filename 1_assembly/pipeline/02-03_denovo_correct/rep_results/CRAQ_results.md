@@ -1,6 +1,6 @@
 ### Representative data from CRAQ output
 
-![craq_genome_summary.png]
+![CRAQ genome summary](craq_genome_summary.png)
 
 Headers example from some of the CRAQ output reports
 

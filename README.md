@@ -1,21 +1,18 @@
 # Hydrophiinae-Genomics
-Genomic resources, scripts, plots and comparative analyses for Hydrophiinae sea snake research
+Genomic resources, scripts, plots and comparative analyses for Hydrophiinae sea snake research, for my honours thesis
 
-### Project Description 
+## Project Description 
 
 abstract
 
 - aims
 - hypotheses
 
-### Project Outline
-
-
-#### Genome Assembly
-#### Genome Annotation
-#### Comparative Genomics
-#### Vomeronasal type-2 Receptor Genes & Repetitive Sequence Association 
-#### Phylogenetics & Evolution
+### Genome Assembly
+### Genome Annotation
+### Comparative Genomics
+### Vomeronasal type-2 Receptor Genes & Repetitive Sequence Association 
+### Phylogenetics & Evolution
 
 ---
 
@@ -25,4 +22,4 @@ abstract
 ...
 
 
-#### References
+### References

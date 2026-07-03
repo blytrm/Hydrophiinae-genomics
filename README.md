@@ -22,4 +22,8 @@ abstract
 ...
 
 
-### References
+---
+
+![Poster for presentation @ 'Genetics Society of Australasia' Annual Conference (2026)](/misc-scripts/figures/GSA26-BTRIMa.png)
+
+### References 

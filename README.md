@@ -22,10 +22,10 @@ abstract
 
 ---
 # Progress
-'''
+```
     ☑️ = done
     ✅ = uploaded to repo
-'''
+```
 
 ### Genome Assembly
 - outline

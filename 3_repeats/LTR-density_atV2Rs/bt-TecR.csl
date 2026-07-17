@@ -1,0 +1,227 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% RBGf Class for LaTeX files
+%% August 2021
+%% This file is for the 'Brazilian Journal of Geophysics' template foom Overleaf online
+%% Initial Class Provide by Thiago R Almeida
+%%
+%% Modified by: Billy Trim
+%%
+%% Revised by: Billy Teim
+%%
+%% Versions: v.02 used in July 2026 for a Homours ('technical report project')
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% -----------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{btTecR.cls}
+
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions\relax
+\LoadClass[twoside,a4paper,11pt]{article}
+
+\RequirePackage{ifthen}
+
+%% Page style
+\setlength{\textheight}{25cm}
+\setlength{\textwidth}{17cm}
+\setlength{\oddsidemargin}{-1.0cm}
+\setlength{\evensidemargin}{-1.0cm}
+\setlength{\topmargin}{-1.5cm}	    
+\setlength{\headheight}{0.5cm}
+\setlength{\headsep}{1cm}
+
+
+%% -------------------------------------------------------------------
+%% Text configuration:
+%\RequirePackage{etoolbox}
+
+\RequirePackage[portuguese,english]{babel}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+
+%\RequirePackage{microtype}
+
+\hyphenpenalty1
+
+%% -------------------------------------------------------------------
+%% Main document font:
+%\RequirePackage[scaled]{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+
+%% -------------------------------------------------------------------
+%% Math, units and science packages:
+\RequirePackage{amsmath,amsfonts,dsfont,amssymb}
+\RequirePackage{mathtools}
+
+%% -------------------------------------------------------------------
+%% To control the floating elements position (graphics, tables, figures, etc):
+\RequirePackage{graphicx}
+%\RequirePackage[labelsep=period]{caption}
+\RequirePackage{subcaption}
+\RequirePackage{float}
+\RequirePackage{setspace}
+\RequirePackage{array}
+    \renewcommand{\arraystretch}{1.0}
+
+%% -------------------------------------------------------------------
+%% To merge rows and columns into tables:
+\RequirePackage{multirow}
+\RequirePackage{multicol}
+\setlength{\columnsep}{0.75cm}
+
+%%-------------------------------------------------------------------
+%% Configuration of hyperlinks:
+\RequirePackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref}
+%% To have the possibility to change the urlcolor
+\newcommand{\changeurlcolor}[1]{\hypersetup{urlcolor=#1}}
+
+\RequirePackage{cleveref}
+
+
+%% -------------------------------------------------------------------
+%% Article numbers:
+
+\makeatletter
+
+\DeclareRobustCommand{\correspondente}[1]{\newcommand{\correspond}{#1}}
+
+%%-------------------------------------------------------------------
+%% Commands for title and authors.
+\DeclareRobustCommand{\shorttitle}[1]{\newcommand{\titulocurto}{#1}}
+\DeclareRobustCommand{\shortauthors}[1]{\newcommand{\autorescurto}{#1}}
+
+%%-------------------------------------------------------------------
+%% Section and subsection configuration:
+\RequirePackage{xcolor}
+\setcounter{secnumdepth}{4}
+%    Section titles: Uppercase, boldface.
+\renewcommand{\section}{\@startsection
+ {section}%                   % the name
+ {1}%                         % the level
+ {0mm}%                       % the indent  {-10\p@}
+ {-0.4\baselineskip}%            % the before skip
+ {0.1\baselineskip}%          % the after skip
+ {\color{red!70!black}\bfseries\MakeUppercase}} %
+
+
+%    Subsection titles: Normalfont, boldface.
+\renewcommand{\subsection}{\@startsection
+{subsection}%                   % the name
+{2}%                         % the level
+{0mm}%                       % the indent
+{-0.05\baselineskip}%            % the before skip
+{0.001\baselineskip}%          % the after skip
+{\bfseries}} % the style
+
+%    Sub-subsection titles: Normalfont, italics, boldface.
+\renewcommand{\subsubsection}{\@startsection
+{subsubsection}%                   % the name
+{2}%                         % the level
+{0mm}%                       % the indent
+{-\baselineskip}%            % the before skip
+{0.001\baselineskip}%          % the after skip
+{\it\bfseries}} % the style
+
+%   Configurations for appendices.
+\let\oldappendix\appendix% Store \appendix
+\renewcommand{\appendix}{% Update \appendix
+	\oldappendix% Default \appendix
+	\setcounter{equation}{0}
+	\setcounter{figure}{0}
+	\setcounter{table}{0}
+	\renewcommand*{\@seccntformat}[1]{{\bf APPENDIX} \thesection. \quad}
+	\renewcommand{\theequation}{\thesection\arabic{equation}} 
+	\renewcommand{\thefigure}{\thesection\arabic{figure}} 
+	\renewcommand{\thetable}{\thesection\arabic{table}} 
+%	\renewcommand{\theequation}{\thesection\arabic{equation}}
+%	\renewcommand*{\@seccntformat}[1]{{\bf APPENDIX} \quad \csname  \endcsname}
+}
+
+%%-------------------------------------------------------------------
+%% References configuration:
+\RequirePackage[round]{natbib} % Para fazer bibliografia no estilo autor-ano.
+\setlength{\bibsep}{0cm}
+%
+
+\DeclareRobustCommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\DeclareRobustCommand{\affiliation}[2]{ \blfootnote{$^{#1}$#2} }
+\DeclareRobustCommand{\affil}[1]{$^{#1}$}
+
+%%-------------------------------------------------------------------
+%% Abstract configuration:
+\RequirePackage{xcolor}
+\RequirePackage{setspace} % Required for \setstretch
+
+\DeclareRobustCommand{\keywords}[1]{\gdef\@keys{#1}}
+
+\renewenvironment{abstract}
+	{ % --- BEFORE TEXT ---
+	\thispagestyle{empty}
+	\noindent
+    \setstretch{1.5}
+	\begin{minipage}{\textwidth}
+	% 1. Keywords at the top, centered
+	% 2. Context header (No \par or empty line after this)
+	\noindent\textbf{\textcolor{red!70!black}{CONTEXT.}}~%
+	}
+	{ 
+	\end{minipage}
+	\vspace{0.3cm}
+	}
+
+%%-------------------------------------------------------------------
+%% Document header and footer (except first page):
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+	\fancyhead[EL]{ {\Large \thepage} {\small \MakeUppercase{\text{\titulocurto}}} }
+	\fancyhead[OR]{ {\Large \thepage} }
+	\fancyhead[OL]{}
+	\fancyfoot[ER,OL]{\small Billy Trim}
+	\cfoot{}
+    \renewcommand{\footrulewidth}{0.8pt}
+
+\DeclareRobustCommand{\cover}{%
+	\setstretch{1.5}
+	{\scriptsize
+	\begin{tabular}{@{}l@{\hspace{1cm}}l@{}}
+		\raisebox{-0.5\height}{\includegraphics[scale=0.05, trim={1cm 1cm 1cm 1cm},clip]{Classe_submit/adl-fig.png}} & 
+		\raisebox{-0.5\height}{%
+			\begin{tabular}{@{}l@{}} 
+				BIOL\_4001; Advanced Biological Sciences \\ 
+				17th July 2026
+			\end{tabular}%
+		}
+	\end{tabular} }
+	\setstretch{1.5}
+	\begin{center}
+	\begin{minipage}{0.9\textwidth}
+		\centering
+        \vspace{1.5cm}
+        {\centering\textbf{| \textcolor{red!70!black}{Billy Trim} |} \ \@keys \par\vspace{0.2cm}}
+        \vspace{0.3cm}
+        \hrule
+        \vspace{2.0cm}
+		{\Large\bfseries\MakeUppercase{\@title}}
+		\vspace{1.0cm}
+	\end{minipage}
+	\end{center}
+    \hrule
+    \vspace{2.0cm}
+}
+
+\AtBeginDocument{
+	\onecolumn
+	\cover
+	\setstretch{1.5}
+}
+
+\makeatother

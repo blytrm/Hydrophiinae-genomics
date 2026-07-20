@@ -13,6 +13,10 @@ abstract
 #### Genome Assembly
 
 #### Genome Annotation
+* Repeat Annotation
+    * ##### ![LTR Density & V2R Gene Array Association (*Technical Report Investigation*)](./3_repeats/LTR-density_atV2Rs)
+* Gene Annotation
+* V2R Annotation
 
 #### Comparative Genomics
 

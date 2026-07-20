@@ -54,18 +54,17 @@
 Hydrophiinae-genomics/
 └── 3_repeats/LTR-density_atV2Rs/
     ├── annotation/          # EDTA, RepeatMasker, V2R calls
-    ├── nulls/               # Null A–D + cyclic permutation
+    ├── tech-report-pages/   # Document pages, figures, LaTeX document code, pdf
     ├── dose_response/       # NB-GLM
-    ├── figures/             # report figures
+    ├── figures/             # 
     └── README               # method notes
 ```
 
 ---
 
+![Page 1](./tech-report-pages/page-01.png)
 <details>
   <summary><h2>->Click to view the full technical report (15 pages)</h2></summary>
-
-![Page 1](./tech-report-pages/page-01.png)
 
 ![Page 2](./tech-report-pages/page-02.png)
 

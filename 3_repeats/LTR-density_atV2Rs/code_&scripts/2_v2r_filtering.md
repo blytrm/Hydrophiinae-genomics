@@ -12,7 +12,7 @@
 
 | Source                        | What it produces                          | Script |
 | ----------------------------- | ----------------------------------------- | ------ |
-| pHMM scan + intact validation | `horn_v2r_genes.csv` (class = intact / …) |        |
+| pHMM scan + intact validation | `horn_v2r_genes.csv`  |        |
 | tBLASTn + filter/merge        | locus BED                                 |        |
 
 
@@ -88,6 +88,8 @@ cluster_sets <- lapply(merge_distances, function(d)
 
 ![Nearest gap distribution](../tech-report-pages/v2r_nearest_gap_distribution.png)
 
+Figure (above). Nearest-neighbour gaps between consecutive V2Rs (n = 155 pairs). The distribution is bimodal: a smaller left mode separates paralogs inside the same tandem array (2.7–97.6 kb, median 33.4 kb, n = 33), while a larger mode separates independent V2R arrays (overall median gap 453 kb). The 100 kb merge threshold sits between these modes, joining all within-array paralogs while leaving distinct arrays unmerged.
+
 ---
 
 ## 4. Analysis sets used later
@@ -100,7 +102,7 @@ A_sets <- list(
 )
 ```
 
-- **Part 03** — locus-level permutation (exploratory; inflated by tandem dependence).
-- **Part 04** — cluster-level + Null C/D + cyclic (headline H1).
-- **Part 05** — NB-GLM dose–response on cluster `n_loci` ~ LTR density (H2).
+3. locus-level permutation (exploratory; inflated by tandem dependence).
+4. cluster-level + Null C/D + cyclic 
+5. NB-GLM dose–response on cluster `n_loci` ~ LTR density
 

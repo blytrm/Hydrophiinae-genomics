@@ -44,15 +44,19 @@
 2. **Null B** — shuffle within C2 / CZ only
 3. **Null C** — GC-matched resampling
 4. **Null D** — exclude low-mappability / coverage-anomaly regions
-5. **Cyclic permutation** — rotate LTR track; keep V2Rs fixed *(most conservative)*
+6. **Cyclic permutation** — rotate LTR track; keep V2Rs fixed *(most conservative)*
 
 ### Results
-
-- Genome-wide Null A **inflates** enrichment (~3.6×) relative to chromosome-matched nulls (~1.4–1.6×).
-- Cluster-level enrichment survives on **C2** (all nulls significant); **CZ** is method-sensitive (all nulls except cyclic permutation significant).
-- **No robust monotonic dose–response** between LTR density and cluster size after BH correction.
-- Enrichment is concentrated in short `LTR/unknown` fragments — compatible with degraded remnants or annotation artefacts, not necessarily intact drivers of duplication.
-- Strong co-localisation of V2Rs with low-mappability sequence is a major assembly confound (esp. CZ).
+* Genome-wide Null A inflates enrichment (~3.6×) relative to chromosome-matched nulls (~1.4–1.6×).
+* Co-localisation + increased abundance of LTRs at V2R loci flanks
+   <div align="center"> <img src="./tech-report-pages/figii.png" alt="LTR signal at V2R flanking regions" width="400"> </div>
+* Cluster-level enrichment survives on C2 (all nulls significant); CZ is method-sensitive (all nulls except cyclic permutation significant).
+* No robust monotonic dose–response between LTR density and cluster size after BH correction.
+* Enrichment is concentrated in short LTR/unknown fragments --> compatible with degraded remnants or annotation artefacts, not necessarily intact drivers of duplication.
+  <div align="center"> <img src="./tech-report-pages/figvi.png" alt="LTR length distribution" width="400"> </div>
+* Strong co-localisation of V2Rs with low-mappability sequence is a major assembly confound (esp. CZ).
+   * <div align="center"> <img src="./tech-report-pages/c2-cZ_chromosome-quality.png" alt="Complex/quality of tandem arrays" width="400"> </div>
+<div align="center"> <img src="./tech-report-pages/figi.png" alt="results" width="600"> </div>
 
 ---
 

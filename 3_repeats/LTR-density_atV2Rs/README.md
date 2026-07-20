@@ -3,9 +3,6 @@
 **BIOL 4001 — Advanced Biological Sciences · Technical Report**  
 ---
 
-[PDF download](./BILLY_TRIM-TECH_REPORT.pdf) · [Analysis scripts](https://github.com/blytrm/Hydrophiinae-genomics/tree/main/3_repeats/LTR-density_atV2Rs)
-
-
 # `TO DO` = **_Repo map_**
 
 ---
@@ -61,6 +58,8 @@ Hydrophiinae-genomics/
 ```
 
 ---
+
+[PDF download](./BILLY_TRIM-TECH_REPORT.pdf) · [Analysis scripts](https://github.com/blytrm/Hydrophiinae-genomics/tree/main/3_repeats/LTR-density_atV2Rs)
 
 ![Page 1](./tech-report-pages/page-01.png)
 <details>

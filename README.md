@@ -2,21 +2,24 @@
 Genomic resources, scripts, plots and comparative analyses for Hydrophiinae sea snake research, for my honours thesis
 
 ## Project Description 
-
+```text
 abstract
+```
 
+### Project Aims
+```text
 - aims
 - hypotheses
+```
 
 ---
-### Outlines
-#### Genome Assembly
-
-#### Genome Annotation
-* Repeat Annotation
-    * ##### ![LTR Density & V2R Gene Array Association (*Technical Report Investigation*)](./3_repeats/LTR-density_atV2Rs)
-* Gene Annotation
-* V2R Annotation
+### Outline
+# [Genome Assembly](./1_assembly)
+# Genome Annotation
+* ## [Repeat Annotation](./3_repeats)
+    * ### [LTR Density & V2R Gene Array Association (*Technical Report Investigation*)](./3_repeats/LTR-density_atV2Rs)
+* ## [Gene Annotation](./2_annotation)
+* ## [V2R Annotation](./4_v2rs)
 
 #### Comparative Genomics
 
@@ -25,6 +28,9 @@ abstract
 #### Vomeronasal Type-2 Receptors
 
 ---
+---
+
+
 # Progress
 ```
     ☑️ = done

@@ -67,7 +67,7 @@ Hydrophiinae-genomics/
 
 ![Page 1](./tech-report-pages/page-01.png)
 <details>
-  <summary><h2>->Click to view the full technical report (15 pages)</h2></summary>
+  <summary><h2>Click to view the full technical report (15 pages)</h2></summary>
 
 ![Page 2](./tech-report-pages/page-02.png)
 

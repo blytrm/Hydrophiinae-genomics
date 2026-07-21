@@ -38,7 +38,7 @@ Published V2R repertoire sizes for a **single clade** span more than an order of
 | Policarpo et al. (2024) | marine tetrapods (pre-2021 assemblies) | — | convergent **contraction** across ALL marine tetropods |
 | **Trim 2026 {[_report_](https://medium.com/@billyt13/parameter-driven-refinement-of-a-sea-snake-genome-assembly-enhances-structural-accuracy-and-enables-715b5c2ecf95?sharedUserId=billyt13)} _preliminary_** | **_H. major_, reassembled** | **~2,370** | highest estimate |
 
-These numbers cannot all be biology. **The central thesis of this project is that assembly-quality artefacts — collapsed tandem arrays, Z-chromosome miscounting, lineage-specific sequence invisible to a linear reference —> the dominant driver of this variation, not genuine copy-number differences between recently (1MYA) diverged species**
+These numbers cannot all be biology. **The thesis of this project is that assembly-quality artefacts [collapsed tandem arrays, Z-chromosome miscounting, lineage-specific sequence invisible to a linear reference] —> the dominant driver of this variation, not genuine copy-number differences between recently (1MYA) diverged species**
 
 [Results showed:](https://github.com/blytrm/Hydrophiinae-chromosome-assembly-investigation)
 - BUSCO completeness **96.0% → 99.24%**

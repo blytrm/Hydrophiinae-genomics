@@ -2,13 +2,13 @@
 
 - tBLASTn query is `annotation/v2r/hma_7tm.fa`; alignment orientation is **ref = old, query = new**.
 
-## Showcase
+### _Hydrophis cyanocinctus old vs new_
 
 ![Hydrophis synteny plots (old vs new assembly)](synteny_facet.png)
 
 - Left = all chromosomes; right = ch2 + chz subset (500 bp alignment filter).
 - Red band = new assembly, blue band = old assembly, orange ticks = V2R genes.
-- Ribbons = nucmer synteny links, coloured by the `ltc` **heatmap3** palette.
+- Ribbons = nucmer synteny links
 
 ## Run order
 

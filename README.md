@@ -23,7 +23,7 @@ Billy Trim (`a1864358`) · Supervisors: **Dr Alastair Ludington** & **Prof. Kate
         - [LTR & V2R Tandem Array Association](./3_repeats/LTR-density_atV2Rs) <- **`technical report`**
              - [code_&scripts](./3_repeats/LTR-density_atV2Rs/code_&scripts)
              - [tech-report-pages](./3_repeats/LTR-density_atV2Rs/tech-report-pages)
-        - [RROC-AUC_array-prediction](./3_repeats/RROC-AUC_array-prediction)
+        - [ROC-AUC_array-prediction](./3_repeats/ROC-AUC_array-prediction)
    - [V2R Curation + Investigation](./4_v2rs)
 
 ---

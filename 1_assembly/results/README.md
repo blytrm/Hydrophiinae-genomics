@@ -6,7 +6,6 @@
   * -> explains C4's complexity
 
 ### QC metrics
-![spider plot](./newplot.png)
 ![all asms improved](facet_spider_original_vs_final.png)
 ![radar](./radar_poster.png)
 

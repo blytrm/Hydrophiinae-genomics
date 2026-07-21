@@ -7,6 +7,28 @@ Billy Trim (`a1864358`) · Supervisors: **Dr Alastair Ludington** & **Prof. Kate
 
 ---
 
+  | `Index` |
+  | --- |
+   - [Assembly](./1_assembly)
+        - [QC](./1_assembly/QC)
+        - [Pipeline](./1_assembly/pipeline)
+        - [Results](./1_assembly/results)
+        - [Sequence Resolution/Investigation](./1_assembly/sequence_resolution)
+             - [Coverage](./1_assembly/sequence_resolution/coverage)
+   - [Annotation](./2_annotation)
+        - [V2R Structure/Homology-based Proxy Search (Conserved Protein Domain)](./2_annotation/7tm-proxy-anno)
+        - [V2R Probabalistic/Homology-based Proxy Search (Hidden Markov Model)](./2_annotation/pHMM-proxy-anno)
+   - [Repeat Annotation](./3_repeats)
+        - [EDTA_RM](./3_repeats/EDTA_RM)
+        - [LTR & V2R Tandem Array Association](./3_repeats/LTR-density_atV2Rs) <- **`technical report`**
+             - [code_&scripts](./3_repeats/LTR-density_atV2Rs/code_&scripts)
+             - [tech-report-pages](./3_repeats/LTR-density_atV2Rs/tech-report-pages)
+        - [RROC-AUC_array-prediction](./3_repeats/RROC-AUC_array-prediction)
+   - [V2R Curation + Investigation](./4_v2rs)
+| --- |
+
+---
+
 ### The problem // Preliminary Work (2025)
 Published V2R repertoire sizes for a **single clade** span more than an order of magnitude:
 

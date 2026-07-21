@@ -9,7 +9,11 @@
   * chZ:autosome ratio = chZ median / median of the seven autosomal macro medians.
   * 100 kb windowed coverage (mosdepth per-base, length-weighted), normalised to the autosomal median, for the per-assembly profile figures.
 
-
+| <img src="./SUMMARY_chZ_ratio.png" alt="Summary" width="450"> |
+|---|
+| hmaj (female ZW) | hcy (male ZZ) |
+|---|---|
+| ![coverage_hmaj_chZ](./coverage_hmaj_chZ.png) | ![coverage_hcy_chZ](./coverage_hcy_chZ.png) |
 
 **Result**
 | assembly | species            | platform    | autosome median | chZ median | **chZ : autosome** | inferred sex    |

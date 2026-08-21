@@ -48,6 +48,9 @@ result functionally.
 | **total genes**      | **661** | **433** | **418** | **513** | **425** |
 
 
+![[v2r position on genome]](./V2R_curation.png)
+
+
 V2R curation workflow
 
 ---

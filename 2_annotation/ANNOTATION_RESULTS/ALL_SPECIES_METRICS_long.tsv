@@ -1,0 +1,111 @@
+metric	label	Hydrophis major	Hydrophis curtus (East)	Hydrophis curtus (West)	Hydrophis cyanocinctus	Hydrophis ornatus
+genome_size_Gbp	Genome size (Gbp)	2.15	1.923	2.059	1.928	1.998
+genome_size_bp	genome_size_bp	2150333220	1922533803	2058638819	1927585190	1997787468
+genome_n_sequences	Sequences in assembly	1111	361	31	48	196
+genome_n_chromosomes	Chromosomes (ch*)	8	8	8	8	8
+genome_chrom_bp	genome_chrom_bp	1987256141	1815148967	2056049319	1925852093	1987949638
+genome_chrom_pct	% genome in chromosomes	92.42	94.41	99.87	99.91	99.51
+genome_longest_bp	genome_longest_bp	433244949	427672179	452290879	434496332	445891985
+n_gene_total	Total gene features	22445	21847	22305	21662	21937
+n_protein_coding	Protein-coding genes	20825	20367	20545	20300	20378
+n_lncRNA	lncRNA genes	1357	1346	1511	1225	1381
+n_processed_pseudogene	Processed pseudogenes	263	134	249	137	178
+n_mRNA	mRNA isoforms	52501	51588	51444	51220	51521
+n_exon	n_exon	541762	538259	533373	535436	538985
+n_CDS	n_CDS	501517	498646	493878	496630	499399
+n_proteins	Protein sequences	52229	51450	51188	51081	51335
+isoforms_per_gene	Isoforms / gene	2.52	2.53	2.5	2.52	2.53
+agat_mrna_genes	agat_mrna_genes	21088	20501	20794	20437	20556
+agat_mrna_n	agat_mrna_n	52501	51587	51444	51220	51521
+agat_mrna_utr_both	agat_mrna_utr_both	38766	38259	37748	37914	38150
+agat_mrna_utr_any	agat_mrna_utr_any	41637	41029	40626	40721	40984
+agat_pct_mrna_utr_both	% mRNA with both UTRs	73.8	74.2	73.4	74.0	74.0
+agat_pct_mrna_utr_any	% mRNA with ≥1 UTR	79.3	79.5	79.0	79.5	79.5
+agat_mean_mrnas_per_gene	agat_mean_mrnas_per_gene	2.5	2.5	2.5	2.5	2.5
+agat_mean_exons_per_mrna	Mean exons / mRNA	10.3	10.4	10.3	10.4	10.4
+agat_mean_exons_per_cds	agat_mean_exons_per_cds	9.6	9.7	9.6	9.7	9.7
+agat_mean_gene_length_bp	Mean gene length (bp)	42081	42207	42622	42672	43044
+agat_median_gene_length_bp	Median gene length (bp)	17783	18297	17911	18213	18347
+agat_mean_cds_length_bp	agat_mean_cds_length_bp	1608	1618	1610	1621	1617
+agat_median_cds_length_bp	agat_median_cds_length_bp	123	123	123	123	123
+agat_longest_gene_bp	agat_longest_gene_bp	1589794	2417673	2562264	3330625	2486368
+agat_shortest_gene_bp	agat_shortest_gene_bp	39	42	36	39	42
+agat_gene_overlapping	Overlapping genes	2438	2371	2371	2370	2314
+agat_single_exon_gene	Single-exon genes	2138	2045	2148	2043	2027
+agat_single_exon_mrna	agat_single_exon_mrna	3041	2948	3069	2926	2923
+agat_longest_iso_mean_gene_bp	agat_longest_iso_mean_gene_bp	39454	39742	40159	40225	40380
+agat_longest_iso_median_gene_bp	agat_longest_iso_median_gene_bp	16750	17123	16787	17033	17248
+agat_longest_iso_mean_cds_bp	agat_longest_iso_mean_cds_bp	1586	1596	1576	1594	1592
+agat_lnc_genes	agat_lnc_genes	1357	1346	1511	1225	1381
+agat_lnc_n	agat_lnc_n	1389	1380	1536	1251	1406
+agat_lnc_mean_gene_bp	agat_lnc_mean_gene_bp	10191	9754	10129	8740	8967
+gffutils_gene_count	gffutils_gene_count	22445	21847	22305	21662	21937
+gffutils_gene_length_mean	gffutils_gene_length_mean	40152.7	40207.2	40422.3	40753.1	40898.3
+gffutils_gene_length_min	gffutils_gene_length_min	39	42	36	39	42
+gffutils_gene_length_max	gffutils_gene_length_max	1589794	2417673	2562264	3330625	2486368
+gffutils_cds_count	gffutils_cds_count	501517	498646	493878	496630	499399
+protein_aa_mean	Mean protein length (aa)	534.8	538.2	535.5	539.4	538.0
+protein_aa_median	Median protein length (aa)	400	402	399	402	402
+protein_aa_min	protein_aa_min	8	10	9	8	8
+protein_aa_max	protein_aa_max	8318	23082	8331	33282	8318
+protein_lt100aa_n	protein_lt100aa_n	2472	2454	2507	2426	2484
+protein_lt100aa_pct	% proteins <100 aa	4.73	4.77	4.9	4.75	4.84
+omark_clade	omark_clade	Colubroidea	Colubroidea	Colubroidea	Colubroidea	Colubroidea
+omark_n_hogs	omark_n_hogs	12174	12174	12174	12174	12174
+omark_n_proteins	omark_n_proteins	20825	20367	20545	20300	20378
+omark_single_n	omark_single_n	11716	11759	11606	11761	11741
+omark_single_pct	OMArk Single %	96.24	96.59	95.33	96.61	96.44
+omark_duplicated_n	omark_duplicated_n	207	170	272	172	188
+omark_duplicated_pct	OMArk Duplicated %	1.7	1.4	2.23	1.41	1.54
+omark_dup_unexpected_n	omark_dup_unexpected_n	183	152	249	147	164
+omark_dup_unexpected_pct	omark_dup_unexpected_pct	1.5	1.25	2.05	1.21	1.35
+omark_dup_expected_n	omark_dup_expected_n	24	18	23	25	24
+omark_dup_expected_pct	omark_dup_expected_pct	0.2	0.15	0.19	0.21	0.2
+omark_missing_n	omark_missing_n	251	245	296	241	245
+omark_missing_pct	OMArk Missing %	2.06	2.01	2.43	1.98	2.01
+omark_consistent_n	omark_consistent_n	18952	18539	18678	18513	18556
+omark_consistent_pct	OMArk Consistent %	91.01	91.02	90.91	91.2	91.06
+omark_cons_partial_n	omark_cons_partial_n	601	622	619	616	599
+omark_cons_partial_pct	omark_cons_partial_pct	2.89	3.05	3.01	3.03	2.94
+omark_cons_frag_n	omark_cons_frag_n	859	754	891	732	753
+omark_cons_frag_pct	omark_cons_frag_pct	4.12	3.7	4.34	3.61	3.7
+omark_inconsistent_n	omark_inconsistent_n	391	371	387	356	385
+omark_inconsistent_pct	OMArk Inconsistent %	1.88	1.82	1.88	1.75	1.89
+omark_inc_partial_n	omark_inc_partial_n	179	161	160	164	161
+omark_inc_partial_pct	omark_inc_partial_pct	0.86	0.79	0.78	0.81	0.79
+omark_inc_frag_n	omark_inc_frag_n	85	84	92	69	95
+omark_inc_frag_pct	omark_inc_frag_pct	0.41	0.41	0.45	0.34	0.47
+omark_contaminants_n	omark_contaminants_n	0	0	0	0	0
+omark_contaminants_pct	OMArk Contaminants %	0.0	0.0	0.0	0.0	0.0
+omark_unknown_n	omark_unknown_n	1482	1457	1480	1431	1437
+omark_unknown_pct	OMArk Unknown %	7.12	7.15	7.2	7.05	7.05
+omark_main_clade	OMArk main clade	Elapidae	Elapidae	Elapidae	Elapidae	Elapidae
+omark_main_n	omark_main_n	19343	18910	19065	18869	18941
+omark_main_pct	OMArk main clade %	92.88	92.85	92.8	92.95	92.95
+compleasm_lineage	compleasm_lineage	squamata_odb12	squamata_odb12	squamata_odb12	squamata_odb12	squamata_odb12
+compleasm_N	compleasm_N	11294	11294	11294	11294	11294
+compleasm_C_n	compleasm_C_n	11057	11079	11008	11063	11081
+compleasm_C_pct	Compleasm Complete % (S+D)	97.91	98.09	97.47	97.95	98.11
+compleasm_S_n	compleasm_S_n	4307	4362	4346	4371	4338
+compleasm_S_pct	Compleasm Single %	38.14	38.62	38.48	38.7	38.41
+compleasm_D_n	compleasm_D_n	6750	6717	6662	6692	6743
+compleasm_D_pct	Compleasm Duplicated % (isoform-inflated)	59.77	59.47	58.99	59.25	59.7
+compleasm_F_n	compleasm_F_n	68	61	64	69	65
+compleasm_F_pct	Compleasm Fragmented %	0.6	0.54	0.57	0.61	0.58
+compleasm_M_n	compleasm_M_n	169	154	222	162	148
+compleasm_M_pct	Compleasm Missing %	1.5	1.36	1.97	1.43	1.31
+psauron_cds_score	PSAURON CDS score	95.9	96.0	95.9	96.0	96.1
+psauron_protein_score	PSAURON protein score	95.9	96.0	96.0	96.0	96.1
+cpg_total	CpG islands (chromosomes)	388453	359337	429650	383960	393053
+cpg_n_chromosomes	cpg_n_chromosomes	8	8	8	8	8
+cpg_ch1	cpg_ch1	88317	88222	97857	89865	91865
+cpg_ch2	cpg_ch2	75407	68481	81711	75031	77371
+cpg_ch3	cpg_ch3	53629	53791	59023	53583	55194
+cpg_ch4	cpg_ch4	42335	30984	50477	39202	37499
+cpg_ch5	cpg_ch5	41269	40914	45392	42749	43003
+cpg_ch7	cpg_ch7	27105	28627	30382	28037	28705
+cpg_ch8	cpg_ch8	22619	17789	22388	19346	19393
+cpg_chZ	cpg_chZ	37772	30529	42420	36147	40023
+agat_mrna_cds	agat_mrna_cds	52229	51449	51188	51081	51335
+gffutils_gene_unknown_count	gffutils_gene_unknown_count	22445	21847	22305	21662	21937
+eviann_unknown	eviann unknown function	4415	3315	4359	4118	4173

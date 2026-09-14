@@ -1,0 +1,24 @@
+
+
+*********************************************
+* Total features in reference		: 23178
+* Lifted feature			: 21601 (18454 + 1793 + 1354)
+	* Protein-coding feature	: 18454
+	* Non-coding feature		: 1793
+	* Other feature			: 1354
+* Missed feature			: 1577
+
+* Total features in target		: 22536 (18975 + 1819 + 1742)
+	* Protein-coding feature	: 18975 (18307 + 668)
+		* single copy		: 18307
+		* > 1 copy		: 147, 668 in total
+	* Non-coding feature		: 1819 (1773 + 46)
+		* single copy		: 1773
+		* > 1 copy		: 20, 46 in total
+	* Other feature			: 1742 (1306 + 436)
+		* single copy		: 1306
+		* > 1 copy		: 48, 436 in total
+* Completeness by feature type:
+	* gene	: 20865/22352 (93.3%)
+	* pseudogene	: 736/826 (89.1%)
+*********************************************

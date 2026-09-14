@@ -1,0 +1,3 @@
+feature_type	n_reference	n_lifted	n_missed	n_extra_copies	n_target	pct_recovered
+gene	22352	20865	1487	175	21446	0.93347
+pseudogene	826	736	90	40	1090	0.89104

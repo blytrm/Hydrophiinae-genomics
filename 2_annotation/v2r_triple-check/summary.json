@@ -1,0 +1,25 @@
+{
+  "intactness_rule": "Mirrors the lab's V2R curation pipeline: intact = best-scoring miniprot alignment at a locus covers >=80% of its reference V2R protein (coverage_class analogue of repaired_coverage_class=='intact', COV_INTACT=0.80) AND has zero in-frame stop codons (StopCodon/st:i tag) AND zero frameshifts (Frameshift/fs:i tag) on that alignment, with no 7TM domain requirement. Loci = overlapping/near-overlapping (gap<=1000bp) miniprot mRNA alignments on the same chrom+strand, collapsed to one candidate gene; the locus's best-scoring alignment (highest miniprot GFF score) represents it.",
+  "per_species": {
+    "caspera": 199,
+    "hcure": 663,
+    "hcurw": 949,
+    "hcy": 778,
+    "hmaj": 1537,
+    "horn": 696,
+    "nhel": 644,
+    "nscut": 234,
+    "ptext": 171,
+    "tele": 278,
+    "vberus": 264,
+    "vkomodo": 157
+  },
+  "marine_mean": 924.6,
+  "terrestrial_mean": 202.5,
+  "other_mean": 308.4,
+  "orthofinder_marine_mean": 899.8,
+  "orthofinder_terrestrial_mean": 388.5,
+  "uniform_marine_terrestrial_ratio": 4.566,
+  "orthofinder_marine_terrestrial_ratio": 2.316,
+  "verdict": "YES: the marine V2R expansion survives a uniform homology re-count (marine mean intact = 924.6 vs terrestrial-elapid mean = 202.5, vs other-outgroup mean = 308.4); marine:terrestrial ratio is 4.57x under the uniform miniprot recount vs 2.32x under the original OrthoFinder annotation-based counts --> similar magnitude, so the expansion looks real rather than an annotation artefact."
+}

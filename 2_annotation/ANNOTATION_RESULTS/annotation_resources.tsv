@@ -1,0 +1,71 @@
+category	subcategory	name	version	species	tissue	accession	source	parameters	path	size_or_count	status	notes
+GENOME	assembly	10-hcy-final.orignames.fa	final	Hydrophis cyanocinctus	—	—	in-house	—	/hpcfs/users/a1864358/sanders_lab/asm/files/hcy/files/hcy.backup0.backup0/10-hcy-final.orignames.fa	1,927,585,190 bp	active	Used for alignment and EviAnn; naming: ch1–ch14 + contig1–contig34; 48 sequences
+GENOME	assembly	10-hcy-final.fa	final	Hydrophis cyanocinctus	—	—	in-house	—	/hpcfs/users/a1864358/sanders_lab/asm/files/hcy/files/hcy.backup0.backup0/10-hcy-final.fa	1,927,585,190 bp	active	Renamed version: ch1–ch9 + contig1–contig39
+GENOME	chromosome	ch1	—	Hydrophis cyanocinctus	—	—	in-house	—	—	434,496,332 bp	—	Largest chromosome
+GENOME	chromosome	ch2	—	Hydrophis cyanocinctus	—	—	in-house	—	—	372,388,804 bp	—	—
+GENOME	chromosome	ch3	—	Hydrophis cyanocinctus	—	—	in-house	—	—	262,682,137 bp	—	—
+GENOME	chromosome	ch4	—	Hydrophis cyanocinctus	—	—	in-house	—	—	223,776,352 bp	—	—
+GENOME	chromosome	ch5	—	Hydrophis cyanocinctus	—	—	in-house	—	—	220,876,382 bp	—	—
+GENOME	chromosome	ch6	—	Hydrophis cyanocinctus	—	—	in-house	—	—	175,718,701 bp	—	—
+GENOME	chromosome	ch7	—	Hydrophis cyanocinctus	—	—	in-house	—	—	143,033,536 bp	—	—
+GENOME	chromosome	ch8	—	Hydrophis cyanocinctus	—	—	in-house	—	—	92,879,849 bp	—	—
+GENOME	chromosome	ch9	—	Hydrophis cyanocinctus	—	—	in-house	—	—	967,750 bp	—	Microchromosome
+GENOME	unplaced_scaffold	ch10–ch14 + contig1–contig34	—	Hydrophis cyanocinctus	—	—	in-house	—	—	34 unplaced sequences; 6,500–51,333 bp	—	—
+TOOL	QC	FastQC	0.12.1	—	—	—	bioconda	--threads 16	conda env: rnaqc	—	—	Pre- and post-QC quality assessment
+TOOL	QC	BBDuk (BBMap)	—	—	—	—	bioconda	ktrim=r k=23 mink=11 hdist=1 tpe tbo qtrim=rl trimq=8 minlength=50	conda env: rnaqc	—	—	Adapter trimming and rRNA depletion (step 1 of QC chain)
+TOOL	QC	Kraken2	2.17.1	—	—	—	bioconda	--paired --gzip-compressed --use-names --unclassified-out	conda env: rnaqc	—	—	Contamination screening; unclassified reads passed to fastp
+TOOL	QC	fastp	1.3.3	—	—	—	bioconda	--detect_adapter_for_pe --length_required 50 --average_qual 15 --qualified_quality_phred 15 --n_base_limit 5 --compression 6	conda env: rnaqc	—	—	Final quality trimming and filtering (step 3 of QC chain)
+TOOL	QC	MultiQC	1.34	—	—	—	bioconda	--title "RNA-seq QC (prior to EviAnn annotation)"	conda env: rnaqc	—	—	Aggregated QC report across all samples
+TOOL	alignment	HISAT2	2.2.2	—	—	—	bioconda	-p 16 --min-intronlen 20 --max-intronlen 1388389	conda env: rnaqc	—	—	Spliced alignment of paired-end RNA-seq to genome
+TOOL	alignment	samtools	1.23.1	—	—	—	bioconda	sort -@ 4 -m 2G; index	conda env: rnaqc	—	—	BAM sorting and indexing post-HISAT2
+TOOL	annotation	EviAnn	—	—	—	—	—	-t 16 -g genome -r bam_fofn -p proteins	conda env: rnaqc	—	running (job 10840840)	Evidence-based genome annotation; no UniProt -s supplied
+DATABASE	rRNA_reference	rrna_combined.fa	—	—	—	—	BBMap resources	—	/scratchdata1/users/a1864358/dbs/rrna_refs/rrna_combined.fa	20 sequences	active	Combined 16S/18S/23S/5S rRNA sequences; used by BBDuk for rRNA depletion
+DATABASE	contamination	Kraken2 k2_db	—	—	—	—	custom (built with curl; UniVec_Core + root taxon)	—	/scratchdata1/users/a1864358/dbs/kraken2/k2_db	591 MB	active	Minimal Kraken2 DB; rsync to NCBI blocked on Phoenix HPC
+DATABASE	adapter_sequences	adapters.fa	—	—	—	—	BBMap bundled	—	/hpcfs/users/a1864358/miniconda/envs/general/share/bbmap/resources/adapters.fa	—	active	Standard Illumina adapter sequences used by BBDuk
+RNA_SAMPLE	in-house	350840-liver	—	Hydrophiinae (unspecified)	Liver	—	in-house	PE short-read Illumina	results/rna-align/bam/350840-liver.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	350841-skin	—	Hydrophiinae (unspecified)	Skin	—	in-house	PE short-read Illumina	results/rna-align/bam/350841-skin.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	350842-brain	—	Hydrophiinae (unspecified)	Brain	—	in-house	PE short-read Illumina	results/rna-align/bam/350842-brain.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	350843-vitFol	—	Hydrophiinae (unspecified)	Vomeronasal / vitelline follicle	—	in-house	PE short-read Illumina	—	—	EXCLUDED	Persistent OOM failure during HISAT2 alignment (>128 GB); removed from pipeline
+RNA_SAMPLE	in-house	ala-KLS0468-vmo	—	Acalyptophis sp.	Vomeronasal organ	KLS0468	in-house	PE short-read Illumina	results/rna-align/bam/ala-KLS0468-vmo.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	C9FMBANXX-2-B223_B_RHINOCEROS_VNO_TGACCA_L002	—	Bitis rhinoceros (inferred)	Vomeronasal organ	B223	in-house	PE short-read Illumina; flowcell C9FMBANXX lane 2	results/rna-align/bam/C9FMBANXX-2-B223_B_RHINOCEROS_VNO_TGACCA_L002.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	C9FMBANXX-2-NS313_N_SCUTATUS_VNO__F_ATCACG_L002	—	Notechis scutatus	Vomeronasal organ	NS313	in-house	PE short-read Illumina; flowcell C9FMBANXX lane 2	results/rna-align/bam/C9FMBANXX-2-NS313_N_SCUTATUS_VNO__F_ATCACG_L002.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	hcy-brain	—	Hydrophis cyanocinctus	Brain	—	in-house	PE short-read Illumina	results/rna-align/bam/hcy-brain.sorted.bam	—	aligned	Target species
+RNA_SAMPLE	in-house	hcy-parietal	—	Hydrophis cyanocinctus	Parietal eye	—	in-house	PE short-read Illumina	results/rna-align/bam/hcy-parietal.sorted.bam	—	aligned	Target species
+RNA_SAMPLE	in-house	hcy-pineal	—	Hydrophis cyanocinctus	Pineal gland	—	in-house	PE short-read Illumina	results/rna-align/bam/hcy-pineal.sorted.bam	—	aligned	Target species
+RNA_SAMPLE	in-house	hda-eye	—	Hydrophis darwinensis	Eye	—	in-house	PE short-read Illumina	results/rna-align/bam/hda-eye.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	hja-eye	—	Hydrophis jaegeri	Eye	—	in-house	PE short-read Illumina	results/rna-align/bam/hja-eye.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	hma-eye-L2	—	Hydrophis major	Eye	—	in-house	PE short-read Illumina	results/rna-align/bam/hma-eye-L2.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	hma-KLS0460-heart	—	Hydrophis major	Heart	KLS0460	in-house	PE short-read Illumina	results/rna-align/bam/hma-KLS0460-heart.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	hma-KLS0460-liver	—	Hydrophis major	Liver	KLS0460	in-house	PE short-read Illumina	results/rna-align/bam/hma-KLS0460-liver.sorted.bam	—	aligned	—
+RNA_SAMPLE	in-house	hma-KLS0460-testis	—	Hydrophis major	Testis	KLS0460	in-house	PE short-read Illumina	results/rna-align/bam/hma-KLS0460-testis.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_curtus-SRR11659669	—	Hydrophis curtus	—	SRR11659669	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_curtus-SRR11659669.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_curtus-SRR11659670	—	Hydrophis curtus	—	SRR11659670	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_curtus-SRR11659670.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_curtus-SRR11659671	—	Hydrophis curtus	—	SRR11659671	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_curtus-SRR11659671.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_curtus-SRR12882912	—	Hydrophis curtus	—	SRR12882912	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_curtus-SRR12882912.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_curtus-SRR13325964	—	Hydrophis curtus	—	SRR13325964	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_curtus-SRR13325964.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_cyanocinctus-SRR11659657	—	Hydrophis cyanocinctus	—	SRR11659657	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_cyanocinctus-SRR11659657.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_cyanocinctus-SRR11659658	—	Hydrophis cyanocinctus	—	SRR11659658	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_cyanocinctus-SRR11659658.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_cyanocinctus-SRR11659659	—	Hydrophis cyanocinctus	—	SRR11659659	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_cyanocinctus-SRR11659659.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_melanocephalus-DRR147123	—	Hydrophis melanocephalus	—	DRR147123	DDBJ	PE short-read Illumina	results/rna-align/bam/Hydrophis_melanocephalus-DRR147123.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_melanocephalus-DRR147124	—	Hydrophis melanocephalus	—	DRR147124	DDBJ	PE short-read Illumina	results/rna-align/bam/Hydrophis_melanocephalus-DRR147124.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_melanocephalus-DRR147125	—	Hydrophis melanocephalus	—	DRR147125	DDBJ	PE short-read Illumina	results/rna-align/bam/Hydrophis_melanocephalus-DRR147125.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_melanocephalus-DRR147126	—	Hydrophis melanocephalus	—	DRR147126	DDBJ	PE short-read Illumina	results/rna-align/bam/Hydrophis_melanocephalus-DRR147126.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_platurus-SRR3955060	—	Hydrophis platurus	—	SRR3955060	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_platurus-SRR3955060.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_platurus-SRR3955061	—	Hydrophis platurus	—	SRR3955061	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_platurus-SRR3955061.sorted.bam	—	aligned	—
+RNA_SAMPLE	public	Hydrophis_schistosus-SRR16480669	—	Hydrophis schistosus	—	SRR16480669	NCBI SRA	PE short-read Illumina	results/rna-align/bam/Hydrophis_schistosus-SRR16480669.sorted.bam	—	aligned	—
+PROTEIN_INPUT	reference_proteome	txid8570_refseq_proteins.faa	—	Squamata (taxid 8570)	—	—	NCBI RefSeq	—	results/protein-qc/ (deleted raw)	890,908 records	used	Squamata RefSeq proteins; bulk of protein evidence
+PROTEIN_INPUT	chemoreceptor	squamata_v2rs.faa	—	Squamata	—	—	custom	—	results/protein-qc/ (deleted raw)	455 records	used	Squamata V2R vomeronasal chemoreceptor proteins
+PROTEIN_INPUT	chemoreceptor	mus_vmn2r_specific.faa	—	Mus musculus	—	—	custom	—	results/protein-qc/ (deleted raw)	17 records	used	Mouse VMN2R-specific proteins
+PROTEIN_OUTPUT	cleaned	proteins.clean.faa	—	mixed	—	—	step 03	non-standard AA → X; gaps/stops stripped; duplicate IDs de-duplicated	results/protein-qc/proteins.clean.faa	891,380 records; 476,490,871 aa; 527 MB	active	Concatenated cleaned protein FASTA supplied to EviAnn -p
+SLURM_JOB	RNA_QC	02_rna_qc	10562309	—	—	—	Phoenix HPC	8h; 16 CPUs; icelake; account=honours	pipeline/joblogs/02_rna_qc_10562309.out	31 samples in; 30 passed	COMPLETED	2026-05-10; runtime 03:21:14; vitFol skipped (already done in prior run)
+SLURM_JOB	alignment	04_align_rna (array)	10650493	—	—	—	Phoenix HPC	24h; 16 CPUs; 40GB; icelake; array 1-31%4	pipeline/joblogs/04_align_rna_10650493_*.out	31 tasks	30 COMPLETED; 1 FAILED	2026-05-10–11; task 4 (350843-vitFol) OOM at 40GB
+SLURM_JOB	alignment	04_align_rna (vitFol retry 80GB)	10840243	—	—	—	Phoenix HPC	24h; 16 CPUs; 80GB; icelake	pipeline/joblogs/04_align_rna_10840243_4.*	1 task	OUT_OF_MEMORY	vitFol OOM at 80GB; sample subsequently excluded
+SLURM_JOB	alignment	04_align_rna (vitFol retry 128GB)	10840534	—	—	—	Phoenix HPC	24h; 16 CPUs; 128GB; icelake	—	1 task	CANCELLED	Cancelled to resubmit with 192GB
+SLURM_JOB	alignment	04_align_rna (vitFol retry 192GB)	10840566	—	—	—	Phoenix HPC	24h; 16 CPUs; 192GB; icelake	—	1 task	CANCELLED	Cancelled to reduce time limit for queue priority
+SLURM_JOB	alignment	04_align_rna (vitFol final)	10840568	—	—	—	Phoenix HPC	2h; 16 CPUs; 192GB; icelake	—	1 task	CANCELLED	Sample excluded from pipeline entirely
+SLURM_JOB	annotation	05_eviann	10840840	—	—	—	Phoenix HPC	48h; 16 CPUs; 60GB; icelake; account=honours	pipeline/joblogs/05_eviann_10840840.*	—	RUNNING	Submitted 2026-05-11; genome=10-hcy-final.orignames.fa; 30 BAMs; 891,380 proteins
+OUTPUT	aligned_BAMs	rna-align/bam/	—	mixed	mixed	—	step 04	HISAT2 2.2.2 + samtools sort	results/rna-align/bam/	30 BAMs; ~123 GB total	active	Sorted + indexed BAMs; input to EviAnn
+OUTPUT	HISAT2_index	rna-align/index/hcy	—	Hydrophis cyanocinctus	—	—	step 04	hisat2-build -p 16	results/rna-align/index/hcy.*.ht2	8 index files	active	Built from 10-hcy-final.orignames.fa
+OUTPUT	QC_report	rna-seq-qc-multiqc.html	—	mixed	—	—	step 02	MultiQC 1.34	results/rna-qc/multiqc/rna-seq-qc-multiqc.html	—	active	Aggregated RNA-seq QC report
+OUTPUT	cleaned_reads	rna-qc/cleaned/	—	mixed	mixed	—	step 02	fastp filtered; symlinks to fastp/ outputs	results/rna-qc/cleaned/	60 files (30 pairs)	active	Cleaned PE reads; fastp outputs on scratchdata1
+OUTPUT	eviann_annotation	results/eviann/hcy/	—	Hydrophis cyanocinctus	—	—	step 05	EviAnn	results/eviann/hcy/	—	pending	Output of job 10840840

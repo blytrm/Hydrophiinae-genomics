@@ -52,24 +52,22 @@ That gives a rare labelled pair —> *same genome, two assembly qualities, a qua
 
 
 <table>
+      <td colspan="1" align="center"><b>Conference Poster</b></td>
+   <tr>
   <tr>
-    <td colspan="3" align="center"><b>Conference Poster — GSA 2026</b><br><img src="./resources/GSA26-BTRIMa.png" width="400"></td>
+    <td colspan="1" align="center"><b> </b><br><img src="./resources/GSA26-BTRIMa.png" width="400"></td>
   </tr>
   <tr>
-    <td colspan="3" align="center"><b>Literature Review &amp; Proposal</b></td>
+    <td colspan="1" align="center"><b>Literature Review &amp; Proposal</b></td>
   </tr>
   <tr>
-    <td align="center"><sub>Page 1</sub><br><img src="./resources/pages/lit_rev-01.png" width="320"></td>
-    <td align="center"><sub>Page 11</sub><br><img src="./resources/pages/lit_rev-11.png" width="320"></td>
-    <td align="center"><sub>Page 20</sub><br><img src="./resources/pages/lit_rev-20.png" width="320"></td>
+    <td align="center"><sub> </sub><br><img src="./resources/pages/lit_rev-01.png" width="320"></td>
   </tr>
   <tr>
-    <td colspan="3" align="center"><b>Technical Report</b></td>
+    <td colspan="1" align="center"><b>Technical Report</b></td>
   </tr>
   <tr>
-    <td align="center"><sub>Page 1</sub><br><img src="./resources/pages/page-01.png" width="320"></td>
-    <td align="center"><sub>Page 4</sub><br><img src="./resources/pages/page-04.png" width="320"></td>
-    <td align="center"><sub>Page 8</sub><br><img src="./resources/pages/page-08.png" width="320"></td>
+    <td align="center"><sub> </sub><br><img src="./resources/pages/page-01.png" width="320"></td>
   </tr>
 </table>
 
@@ -223,13 +221,13 @@ That gives a rare labelled pair —> *same genome, two assembly qualities, a qua
 - v2rs
 
 ### Vomeronasal type-2 Receptor Genes & Repetitive Sequence Association
-- permutation tests☑️
-- regression☑️
-- on eviann v2rs + all species
+- permutation tests
+- regression
+- on eviann v2rs + all species ☑️
 
 ### Phylogenetics & Evolution
-- selection testing
-- birth death modelling
+- selection testing 
+- birth death modelling   
 - ortho/paralogous
 
 ### Vomeronasal type-2 Receptors

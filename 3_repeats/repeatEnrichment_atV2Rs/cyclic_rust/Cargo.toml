@@ -1,0 +1,17 @@
+[package]
+name = "cyclic_null"
+version = "0.1.0"
+edition = "2021"
+description = "Fast parallel cyclic repetitive element- null for V2R clusters"
+
+[dependencies]
+anyhow = "1"
+rayon = "1"
+rand = "0.8"
+rand_chacha = "0.3"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+panic = "abort"

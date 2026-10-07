@@ -1,7 +1,2 @@
-Makefile linguist-detectable=false
-<<<<<<< HEAD
+Makefile linguist-documentation
 *.ipynb linguist-detectable=false
-||||||| parent of d9f575a... Refresh Linguist statistics
-=======
-
->>>>>>> d9f575a... Refresh Linguist statistics

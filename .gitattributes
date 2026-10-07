@@ -1,2 +1,2 @@
+Makefile linguist-detectable=false
 *.ipynb linguist-detectable=false
-Makefile linguist-detectable=false linguist-generated

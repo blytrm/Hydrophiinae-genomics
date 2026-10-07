@@ -1,2 +1,2 @@
-Makefile linguist-vendored=true
+Makefile linguist-ignore=true
 *.ipynb linguist-detectable=false

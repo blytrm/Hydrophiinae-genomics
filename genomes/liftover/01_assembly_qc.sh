@@ -9,9 +9,6 @@
 # 0=nscut_old 1=nscut_new 2=ptext_old 3=ptext_new
 #   => array job
 
-# Assembly QC on OLD (2018 RefSeq) and NEW (2025) assemblies, both species.
-#   compleasm  
-#   quast      
 
 set -euo pipefail
 
@@ -39,12 +36,14 @@ echo "[$(date)] QC $tag -> $asm"
 
 source /hpcfs/users/a1864358/miniconda/miniconda3/etc/profile.d/conda.sh
 
-# compleasm
+
 set +u; conda activate compleasm; set -u
 compleasm run -a "$asm" -o "$o/compleasm" -l squamata -L "$DB" -t "$T"
 
-# squamata
+
 set +u; conda activate lifton; set -u
 quast.py "$asm" -o "$o/quast" --threads "$T" --eukaryote --plots-format png --no-icarus
 
 echo "[$(date)] done $tag"
+
+

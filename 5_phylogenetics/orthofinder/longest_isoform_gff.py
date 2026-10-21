@@ -4,7 +4,7 @@
     python3 longest_isoform_gff.py <protein.faa> <genomic.gff> <out.fa>
 
 longest_isoform.py splits headers on "-mRNA-" (EviAnn). NCBI proteomes carry no
-gene grouping in the header -- isoforms map to a gene only through the GFF:
+gene grouping in the header -> isoforms map to a gene only through the GFF:
     CDS   protein_id=XP_...  Parent=rna-XM_...
     mRNA  ID=rna-XM_...      Parent=gene-LOC...
  protein_id -> mRNA -> gene, then keep the longest protein per gene.
